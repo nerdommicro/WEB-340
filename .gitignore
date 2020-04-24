@@ -1,0 +1,19 @@
+# IDE
+.vscode
+.idea
+.vs
+
+# Node dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+.dist
+Bellevue2.code-workspace
+week 5/discussion-5.1.js
+.DS_Store
+Week 7/nesbitt-assignment7.4.html.zip
