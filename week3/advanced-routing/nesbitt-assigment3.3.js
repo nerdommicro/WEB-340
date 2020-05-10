@@ -7,9 +7,9 @@
 ; Description: Demonstrates advanced routing
 ;=====================================================
 */
-var assignment = "3.3"
+var assignment = "3.3";
 //Print my header to the screen
-const header = require('../Nesbitt-header.js');
+const header = require('../../Nesbitt-header.js');
 //Display my header with exercise number
 console.log(header.display("Michelle", "Nesbitt", "Exercise " + assignment));
 
@@ -31,7 +31,7 @@ app.set("view engine", "ejs");
 
  app.get("/:employeeId", function(request, response) {
 
-    var productId = parseInt(request.params.employeeId, 10);
+    var employeeId = parseInt(request.params.employeeId, 10);
 
      response.render("index", {
 
