@@ -9,7 +9,7 @@
 */
 var assignment = "3.4"
 //Print my header to the screen
-const header = require('../Nesbitt-header.js');
+const header = require('../../Nesbitt-header.js');
 //Display my header with exercise number
 console.log(header.display("Michelle", "Nesbitt", "Exercise " + assignment));
 
