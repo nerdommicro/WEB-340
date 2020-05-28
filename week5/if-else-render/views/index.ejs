@@ -1,0 +1,80 @@
+
+
+<!--/*
+======================================================
+; Title:  nesbitt-assignment35.2 index.ejs
+; Author: Michelle Nesbitt
+; Date:   5-27-2020
+; Modified By: Michelle Nesbitt
+; Description: Demonstrates routing
+;=====================================================
+*/-->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Michelle Nesbitt - Assignment</title>
+  </head>
+  <body>
+  <div role="main" class="container">
+
+    <br/><br/>
+
+    <h2>Names</h2>
+
+      <% for (var k = 0; k < names.length; k++) { %>
+
+      <!-- if -->
+
+        <% if (names[k] == "Michelle") { %>
+
+        <div class="alert alert-success" role="alert"><strong><%= names[k] %></strong></div>
+
+        <% } %>
+
+        <!-- // end if -->
+
+        <!-- if -->
+
+        <% if (names[k] == "John") { %>
+
+        <div class="alert alert-info" role="alert"><strong><%= names[k] %></strong></div>
+
+        <% } %>
+
+        <!-- // end if -->
+
+        <!-- if -->
+
+        <% if (names[k] == "Nancy") { %>
+
+        <div class="alert alert-warning" role="alert"><strong><%= names[k] %></strong></div>
+
+        <% } %>
+
+        <!-- // end if -->
+
+        <!-- if -->
+
+        <% if (names[k] == "Steve") { %>
+
+        <div class="alert alert-danger" role="alert"><strong><%= names[k] %></strong></div>
+
+        <% } %>
+
+        <!-- // end if -->
+
+      <% } %>
+
+      <!-- end for loop -->
+
+  </div>
+
+</body></html>
