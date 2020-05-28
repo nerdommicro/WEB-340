@@ -9,8 +9,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
@@ -23,11 +23,11 @@ time, mark, audio, video {
 
 
 body {
-	font-family: 'Roboto Slab', serif;     
+	font-family: 'Roboto Slab', serif;
 }
 
-table {   
-	width: 100%;    
+table {
+	width: 100%;
 }
 
 h1, h2 {
@@ -45,7 +45,7 @@ p {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1em;
 }
-.sfdlogo {
+.wpclogo {
 	padding: 10px;
 }
 
