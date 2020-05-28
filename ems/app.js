@@ -1,6 +1,6 @@
 /*
 ======================================================
-; Title:  nesbitt-assignment
+; Title:  nesbitt-assignment app.js
 ; Author: Richard Krasso
 ; Date:   May 28, 2020
 ; Modified By: Michelle Nesbitt
