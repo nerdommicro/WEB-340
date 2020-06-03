@@ -24,7 +24,20 @@ app.get("/", function (request, response) {
     });
 
 });
+app.get("/list", function (request, response) {
 
+  response.render("list", {
+      title: "List of Employees"
+  });
+
+});
+app.get("/new", function (request, response) {
+
+  response.render("new", {
+      title: "Add New Employee"
+  });
+
+});
 http.createServer(app).listen(8080, function() {
 
     console.log("Application started on port 8080!");
