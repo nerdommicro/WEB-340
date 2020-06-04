@@ -27,7 +27,7 @@ db.once("open", function() {
 
 // application
 var app = express();
-app.use(logger("short"));
+app.use(logger("dev"));
 
 // create server
 http.createServer(app).listen(8080, function() {
