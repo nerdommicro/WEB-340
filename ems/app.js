@@ -9,9 +9,26 @@
 */
 var express = require("express");
 var http = require("http");
+var mongoose = require("mongoose");
 var path = require("path");
 var logger = require("morgan");
 var app = express();
+const Employee = require('./models/employee');
+
+var mongoDB = "mongodb+srv://nerdommicro:SupperTime27@buwebdev-cluster-1-wbbs2.mongodb.net/fms?retryWrites=true&w=majority";
+
+mongoose.connect(mongoDB, {
+    useMongoClient: true
+});
+
+mongoose.Promise = global.Promise;
+
+var db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "MongoDB connection error: "));
+db.once("open", function() {
+    console.log("Application connected to mLab MongoDB instance");
+});
 
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -38,6 +55,7 @@ app.get("/new", function (request, response) {
   });
 
 });
+
 http.createServer(app).listen(8080, function() {
 
     console.log("Application started on port 8080!");
