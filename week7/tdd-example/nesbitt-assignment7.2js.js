@@ -9,14 +9,18 @@
 */
 
 
-var assert = require("assert");
 
-describe("String#split", function() {
 
-    it("should return an array of fruits", function() {
+//Run the test
 
-        assert(Array.isArray('Apple,Orange,Mango'.split(',')));
+       // npm test
 
-    });
+//Passed function
 
-});
+function getFruits(str) {
+
+  return str.split(',');
+
+ }
+
+ module.exports = getFruits;

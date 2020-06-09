@@ -1,0 +1,9 @@
+{
+  "name": "chai-example",
+  "author": "Michelle Nesbitt",
+  "private": true,
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.2.0"
+  }
+}

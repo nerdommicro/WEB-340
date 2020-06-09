@@ -1,21 +1,26 @@
+
 /*
 ======================================================
 ; Title:  nesbitt-assignment
 ; Author: Richard Krasso
-; Date:   June 4, 2020
+; Date:   June 5, 2020
 ; Modified By: Michelle Nesbitt
 ; Description: Demonstrates TDD
 ;=====================================================
 */
+var fruits = require("../fruits");
 
+var chai = require("chai");
 
-var assert = require("assert");
+var assert = chai.assert;
 
-describe("String#split", function() {
+describe("fruits", function() {
 
     it("should return an array of fruits", function() {
 
-        assert(Array.isArray('Apple,Orange,Mango'.split(',')));
+        var f = fruits('Apple,Orange,Mango');
+
+        assert(Array.isArray(f));
 
     });
 
