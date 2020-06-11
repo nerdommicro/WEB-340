@@ -55,7 +55,12 @@ app.get("/new", function (request, response) {
   });
 
 });
+var employee = new Employee({
 
+  firstName: "Michelle",
+  lastName: "Nesbitt"
+
+});
 http.createServer(app).listen(8080, function() {
 
     console.log("Application started on port 8080!");

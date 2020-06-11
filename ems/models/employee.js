@@ -21,9 +21,4 @@ let EmployeeSchema = new Schema({
 // Export the model so its publicly available.
 module.exports = mongoose.model('Employee', EmployeeSchema);
 
-var employee = new Employee({
 
-  firstName: "Michelle",
-  lastName: "Nesbitt"
-
-});
