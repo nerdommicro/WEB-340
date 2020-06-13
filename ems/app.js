@@ -66,17 +66,38 @@ app.get("/", function (request, response) {
 });
 
 app.post("/process", function(request, response) {
-  console.log(request.body.txtName);
+
+  if (!request.body.txtFirstName) {
+    response.status(400).send("Entries must have a name");
+    return;
+  }
+  if (!request.body.txtLastName) {
+    response.status(400).send("Entries must have a name");
+    return;
+  }
+  var employee = new Employee({
+    firstName: request.body.txtFirstName,
+    lastName: request.body.txtLastName
+  });
+
+  employee.save(error => {
+    if (error) throw error;
+    console.log("Employee saved successfully!");
+  });
+
   response.redirect("/");
 });
 
 app.get("/list", function (request, response) {
-
-  response.render("list", {
-      title: "List of Employees"
+  Employee.find({}, (error, employees) => {
+    if (error) throw error;
+    response.render("list", {
+      title: "Employees List",
+      employees: employees
+    });
   });
-
 });
+
 app.get("/new", function (request, response) {
 
   response.render("new", {
