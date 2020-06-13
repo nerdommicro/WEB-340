@@ -12,6 +12,7 @@ var http = require("http");
 var mongoose = require("mongoose");
 var path = require("path");
 var logger = require("morgan");
+var helmet = require("helmet");
 var app = express();
 const Employee = require('./models/employee');
 
@@ -33,6 +34,7 @@ db.once("open", function() {
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(logger("short"));
+app.use(helmet.xssFilter());
 
 app.get("/", function (request, response) {
 
