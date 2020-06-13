@@ -13,7 +13,13 @@ var mongoose = require("mongoose");
 var path = require("path");
 var logger = require("morgan");
 var helmet = require("helmet");
+var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+var csrf = require("csurf");
+var csrfProtection = csrf({cookie: true});
+
 var app = express();
+
 const Employee = require('./models/employee');
 
 var mongoDB = "mongodb+srv://nerdommicro:SupperTime27@buwebdev-cluster-1-wbbs2.mongodb.net/fms?retryWrites=true&w=majority";
@@ -36,13 +42,34 @@ app.set("view engine", "ejs");
 app.use(logger("short"));
 app.use(helmet.xssFilter());
 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
+app.use(cookieParser());
+app.use(csrfProtection);
+app.use(function(request, response, next) {
+    var token = request.csrfToken();
+    response.cookie('XSRF-TOKEN', token);
+    response.locals.csrfToken = token;
+    next();
+});
+
+
+
 app.get("/", function (request, response) {
 
     response.render("index", {
-        title: "Home page"
+        message: "Home Page"
     });
 
 });
+
+app.post("/process", function(request, response) {
+  console.log(request.body.txtName);
+  response.redirect("/");
+});
+
 app.get("/list", function (request, response) {
 
   response.render("list", {
@@ -53,7 +80,7 @@ app.get("/list", function (request, response) {
 app.get("/new", function (request, response) {
 
   response.render("new", {
-      title: "Add New Employee"
+      message: "Add New Employee"
   });
 
 });
