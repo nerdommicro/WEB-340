@@ -2,7 +2,7 @@
 ======================================================
 ; Title:  nesbitt-assignment app.js
 ; Author: Richard Krasso
-; Date:   May 28, 2020
+; Date:   June 21, 2020
 ; Modified By: Michelle Nesbitt
 ; Description: Demonstrates EJS Templates
 ;=====================================================
@@ -140,8 +140,5 @@ app.get("/view/:queryName", function (request, response) {
 });
 
 
-http.createServer(app).listen(8080, function() {
-
-    console.log("Application started on port 8080!");
-
-});
+app.set("port", process.env.PORT || 8080);
+http.createServer(app).listen(app.get("port"), function() { console.log("Application started on port"  + app.get("port")) });
