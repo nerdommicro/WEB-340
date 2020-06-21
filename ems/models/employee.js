@@ -15,7 +15,8 @@ const Schema = mongoose.Schema;
 // Fruit Schema
 let EmployeeSchema = new Schema({
   firstName: {type: String, required: true },
-  lastName: {type: String, required: true}
+  lastName: {type: String, required: true},
+  id: {type: String, required: true}
 });
 
 // Export the model so its publicly available.

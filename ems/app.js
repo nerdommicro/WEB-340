@@ -77,7 +77,8 @@ app.post("/process", function(request, response) {
   }
   var employee = new Employee({
     firstName: request.body.txtFirstName,
-    lastName: request.body.txtLastName
+    lastName: request.body.txtLastName,
+    id: request.body.txtID
   });
 
   employee.save(error => {
@@ -105,12 +106,40 @@ app.get("/new", function (request, response) {
   });
 
 });
-var employee = new Employee({
 
-  firstName: "Michelle",
-  lastName: "Nesbitt"
+app.get("/view/:queryName", function (request, response) {
+
+  var queryName = request.params.queryName;
+
+  Employee.find({'id': queryName}, function(error, employees) {
+
+      if (error) throw error;
+
+      console.log(employees);
+
+      if (employees.length > 0) {
+
+          response.render("view", {
+
+              title: "Employee Record",
+
+              employee: employees
+
+          })
+
+      }
+
+      else {
+
+          response.redirect("/list")
+
+      }
+
+  });
 
 });
+
+
 http.createServer(app).listen(8080, function() {
 
     console.log("Application started on port 8080!");

@@ -1,0 +1,36 @@
+<!--
+  ======================================================
+; Title:  ems
+; Author: Richard Krasso
+; Date:   6-21-2020
+; Modified By: Michelle Nesbitt
+; Description: Demonstrates EJS Views
+;=====================================================
+-->
+<div role="main" class="container">
+
+  <br/><br/>
+
+    <h2>Employee Record</h2>
+    <br>
+
+    <div>
+      <div class="form-group">
+        <label for="txtName">Name:</label>
+        <input
+        type="text"
+        class="form-control"
+        id="txtName"
+        readonly value="<%= employee[0].firstName %> <%= employee[0].lastName %>" name="txtName"
+        />
+      </div>
+    </div>
+
+    <br /><br />
+
+    <a href="/">&larr; OK</a>
+  </div>
+
+
+
+</div>
