@@ -22,7 +22,7 @@ var app = express();
 
 const Employee = require('./models/employee');
 
-var mongoDB = "mongodb+srv://nerdommicro:SupperTime27@buwebdev-cluster-1-wbbs2.mongodb.net/fms?retryWrites=true&w=majority";
+var mongoDB = "mongodb+srv://admin:admin@buwebdev-cluster-1-wbbs2.mongodb.net/fms?retryWrites=true&w=majority";
 
 mongoose.connect(mongoDB, {
     useMongoClient: true

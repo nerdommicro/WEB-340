@@ -14,7 +14,7 @@ var logger = require("morgan");
 var mongoose = require("mongoose");
 
 // mLab connection
-var mongoDB = "mongodb+srv://nerdommicro:SupperTime27@buwebdev-cluster-1-wbbs2.mongodb.net/fms?retryWrites=true&w=majority";
+var mongoDB = "mongodb+srv://admin:admin@buwebdev-cluster-1-wbbs2.mongodb.net/fms?retryWrites=true&w=majority";
 mongoose.connect(mongoDB, {
   useMongoClient: true
 });
